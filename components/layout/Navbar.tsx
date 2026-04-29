@@ -21,15 +21,28 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0 flex items-center">
+          <Link
+            href="/"
+            className="flex items-center gap-3 transition-opacity hover:opacity-80"
+          >
+            {/* Logo Image */}
             <Image
               src="/logo.png"
-              alt="Nandanik Builders Ltd Logo"
-              width={180}
+              alt="Nandanik Builders Ltd"
+              width={160}
               height={60}
-              className="object-contain"
+              className="h-10 w-auto object-contain"
               priority
             />
+
+            <div className="flex flex-col leading-tight">
+              <span className="text-sm font-semibold text-primary tracking-wide">
+                NANDANIK
+              </span>
+              <span className="text-[10px] text-slate tracking-[0.2em]">
+                BUILDERS LTD
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
