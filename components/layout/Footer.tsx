@@ -22,7 +22,7 @@ export default function Footer() {
               NANDANIK
             </h3>
             <p className="text-sm text-gray-300 font-medium pb-2">
-              BUILDERS LTD
+              BUILDERS LTD.
             </p>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               Innovative Excellence in Precast Pile Driving Technologies.
