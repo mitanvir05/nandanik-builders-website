@@ -1,3 +1,4 @@
+/* app/globals.css */
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -11,11 +12,11 @@
 }
 
 :root {
-  --color-primary: #2B325A;
-  --color-bg: #F8F9FA;
-  --color-accent: #3B82F6;
-  --color-slate: #4B5563;
-  --color-success: #4CAF50;
+  --color-primary: #2b325a;
+  --color-bg: #f8f9fa;
+  --color-accent: #3b82f6;
+  --color-slate: #4b5563;
+  --color-success: #4caf50;
 }
 
 body {
@@ -23,7 +24,14 @@ body {
   color: var(--color-slate);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: var(--color-primary);
-  font-weight: 700;
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
 }
