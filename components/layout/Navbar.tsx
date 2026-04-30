@@ -31,15 +31,15 @@ export default function Navbar() {
               alt="Nandanik Builders Ltd"
               width={160}
               height={60}
-              className="h-11 w-auto object-contain"
+              className="h-12 w-auto object-contain"
               priority
             />
 
-            <div className="flex flex-col leading-tight">
-              <span className="text-sm font-semibold text-primary tracking-wide">
+            <div className="flex flex-col leading-tight mt-5">
+              <span className="text-md font-semibold text-primary tracking-wide">
                 NANDANIK
               </span>
-              <span className="text-[10px] text-slate tracking-[0.2em]">
+              <span className="text-[10px] text-black text-semibold tracking-[0.2em]">
                 BUILDERS LTD
               </span>
             </div>
