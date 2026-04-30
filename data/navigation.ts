@@ -3,6 +3,7 @@ export const services = [
   { name: "Precast Square Pile Making", slug: "precast-square-pile-making" },
   { name: "Pile Testing Services", slug: "pile-testing" },
   { name: "Real Estate & Development", slug: "real-estate" },
+  { name: "Design & Consultancy ", slug: "design-consultancy" },
 ];
 
 export const navLinks = [
