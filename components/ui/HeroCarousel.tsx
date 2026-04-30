@@ -82,7 +82,7 @@ export default function HeroCarousel() {
 
   return (
     <div
-      className="relative w-full h-[80vh] min-h-[600px] bg-primary overflow-hidden mt-21"
+      className="relative w-full h-[80vh] min-h-[600px] bg-primary overflow-hidden mt-20"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
