@@ -4,13 +4,13 @@ import EquipmentSelectionGuide from "@/components/sections/EquipmentSelectionGui
 import TechnicalCapabilities from "@/components/sections/TechnicalCapabilities";
 import PrecastAdvantages from "@/components/sections/PrecastAdvantages";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
+import ImpactStatistics from "@/components/sections/ImpactStatistics"; // <-- Add this
 import TrustedClients from "@/components/sections/TrustedClients";
 
 export default function Home() {
   return (
     <PageTransition>
       {/* Hero Carousel */}
-
       <HeroCarousel />
 
       {/* Equipment Selection Matrix Section */}
@@ -25,8 +25,12 @@ export default function Home() {
       {/* Why Choose Us / Strengths Section */}
       <WhyChooseUs />
 
+      {/* Map & Statistics Section */}
+      <ImpactStatistics />
+
       {/* Infinite Scrolling Client Logos */}
       <TrustedClients />
+
     </PageTransition>
   );
 }
