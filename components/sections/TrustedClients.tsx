@@ -58,7 +58,7 @@ export default function TrustedClients() {
             return (
               <div 
                 key={index} 
-                className="flex items-center justify-center mx-8 md:mx-16 group grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                className="flex items-center justify-center mx-8 md:mx-16 group grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-shadow duration-300 cursor-pointer"
               >
                 {/* 
                   When you have real images, replace this icon/text block with:

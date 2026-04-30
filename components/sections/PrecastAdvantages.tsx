@@ -126,9 +126,9 @@ export default function PrecastAdvantages() {
               <motion.div
                 key={index}
                 variants={cardVariants}
-                className="bg-bg p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300 group"
+                className="bg-bg p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow duration-300 group"
               >
-                <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm mb-6 group-hover:scale-110 group-hover:bg-accent transition-all duration-300">
+                <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm mb-6 group-hover:scale-110 group-hover:bg-accent transition-shadow duration-300">
                   <Icon className="size-7 text-accent group-hover:text-white transition-colors duration-300" />
                 </div>
                 <h3 className="text-xl font-bold text-primary mb-3">
