@@ -32,12 +32,17 @@ function AnimatedCounter({
 
   useEffect(() => {
     if (!inView) return;
+    
+    // PERFORMANCE FIX: Instantiate the formatter ONCE outside the loop
+    const formatter = new Intl.NumberFormat("en-US");
+
     const controls = animate(from, to, {
       duration,
       ease: "easeOut",
       onUpdate(value) {
         if (nodeRef.current) {
-          nodeRef.current.textContent = Intl.NumberFormat("en-US").format(
+          // Use the pre-built formatter (Extremely fast)
+          nodeRef.current.textContent = formatter.format(
             Math.floor(value),
           );
         }
