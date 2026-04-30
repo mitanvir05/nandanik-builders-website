@@ -15,8 +15,6 @@ const slides = [
       "Leading the industry in precast pile driving, foundation engineering, and heavy construction equipment across Bangladesh.",
     image:
       "https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop",
-    ctaText: "Explore Our Services",
-    ctaLink: "/services",
   },
   {
     id: 2,
@@ -25,8 +23,6 @@ const slides = [
       "State-of-the-art precast square pile making and comprehensive pile testing services ensuring structural integrity.",
     image:
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2071&auto=format&fit=crop",
-    ctaText: "View Equipment",
-    ctaLink: "/equipment",
   },
   {
     id: 3,
@@ -35,8 +31,6 @@ const slides = [
       "Developing premium residential and commercial properties that redefine modern living and workspaces.",
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
-    ctaText: "Our Projects",
-    ctaLink: "/projects-clients",
   },
 ];
 
@@ -131,14 +125,7 @@ export default function HeroCarousel() {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.7, duration: 0.8 }}
-              >
-                <Link
-                  href={slides[current].ctaLink}
-                  className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-accent hover:bg-blue-600 transition-colors rounded-sm shadow-lg hover:shadow-xl"
-                >
-                  {slides[current].ctaText}
-                </Link>
-              </motion.div>
+              ></motion.div>
             </div>
           </div>
         </motion.div>
