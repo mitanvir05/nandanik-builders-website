@@ -124,7 +124,7 @@ export default function ImpactStatistics() {
                           geo.properties.name ||
                           geo.properties.ADM2_EN ||
                           "District";
-                        setTooltip(`${districtName} Region`);
+                        setTooltip(`${districtName}`);
                       }}
                       onMouseLeave={() => {
                         setTooltip("");
@@ -161,7 +161,7 @@ export default function ImpactStatistics() {
                     parseFloat(district.lat),
                   ]}
                   onMouseEnter={() =>
-                    setTooltip(`${district.name} District - Active Region`)
+                    setTooltip(`${district.name} `)
                   }
                   onMouseLeave={() => setTooltip("")}
                 >
