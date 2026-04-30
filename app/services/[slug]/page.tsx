@@ -41,8 +41,10 @@ export default async function ServiceDetailPage({ params }: Props) {
 
   return (
     <PageTransition>
-      <h1 className="text-3xl md:text-4xl font-bold mb-6">{service.name}</h1>
+      <div className="pt-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-3xl md:text-4xl font-bold mb-6">{service.name}</h1>
       <p>Service detail content placeholder for {service.name}.</p>
+      </div>
     </PageTransition>
   );
 }
