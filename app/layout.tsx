@@ -51,12 +51,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
+    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body
         className={`${inter.className} bg-bg text-slate antialiased flex flex-col min-h-screen`}
       >
         <Navbar />
-        <main className="flex-grow">{children}</main>
+        <main className="">{children}</main>
         <Footer />
       </body>
     </html>
