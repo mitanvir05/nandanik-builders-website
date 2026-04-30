@@ -6,12 +6,15 @@ import PrecastAdvantages from "@/components/sections/PrecastAdvantages";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import ImpactStatistics from "@/components/sections/ImpactStatistics"; // <-- Add this
 import TrustedClients from "@/components/sections/TrustedClients";
+import EquipmentSpecifications from "@/components/sections/EquipmentSpecifications";
 
 export default function Home() {
   return (
     <PageTransition>
       {/* Hero Carousel */}
       <HeroCarousel />
+      {/* Detailed Specs Tables */}
+      <EquipmentSpecifications />
 
       {/* Equipment Selection Matrix Section */}
       <EquipmentSelectionGuide />
@@ -30,7 +33,6 @@ export default function Home() {
 
       {/* Infinite Scrolling Client Logos */}
       <TrustedClients />
-
     </PageTransition>
   );
 }
