@@ -19,16 +19,17 @@ interface District {
 
 // --- ANIMATED COUNTER HELPER ---
 function AnimatedCounter({
-  from = 0,
   to,
-  duration = 2.5,
+  duration = 1, // Reduced duration to 1 second for a quick, snappy tick
 }: {
-  from?: number;
   to: number;
   duration?: number;
 }) {
   const nodeRef = useRef<HTMLSpanElement>(null);
   const inView = useInView(nodeRef, { once: true, margin: "-100px" });
+
+  // Start exactly 1 number before the target
+  const startValue = to - 1;
 
   useEffect(() => {
     if (!inView) return;
@@ -36,12 +37,12 @@ function AnimatedCounter({
     // PERFORMANCE FIX: Instantiate the formatter ONCE outside the loop
     const formatter = new Intl.NumberFormat("en-US");
 
-    const controls = animate(from, to, {
+    const controls = animate(startValue, to, {
       duration,
       ease: "easeOut",
       onUpdate(value) {
         if (nodeRef.current) {
-          // Use the pre-built formatter (Extremely fast)
+          // Use the pre-built formatter
           nodeRef.current.textContent = formatter.format(
             Math.floor(value),
           );
@@ -49,11 +50,15 @@ function AnimatedCounter({
       },
     });
     return () => controls.stop();
-  }, [from, to, inView, duration]);
+  }, [to, startValue, inView, duration]);
 
-  return <span ref={nodeRef}>{from}</span>;
+  // Initial render state must also be formatted correctly (e.g. 79,999)
+  return (
+    <span ref={nodeRef}>
+      {new Intl.NumberFormat("en-US").format(startValue)}
+    </span>
+  );
 }
-
 // --- DATA ---
 const statsData = [
   { value: 48, suffix: " +", label: "Professionals in our team" },
