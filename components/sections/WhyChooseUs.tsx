@@ -135,7 +135,7 @@ export default function WhyChooseUs() {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="bg-white/5 border border-white/10 hover:bg-white/10 p-6 rounded-2xl transition-all duration-300"
+                  className="bg-white/5 border border-white/10 hover:bg-white/10 p-6 rounded-2xl transition-shadow duration-300"
                 >
                   <Icon className="text-accent size-8 mb-5" />
                   <h3 className="text-xl font-bold text-white mb-3">

@@ -147,14 +147,14 @@ export default function HeroCarousel() {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-3 text-white/70 hover:text-white bg-black/20 hover:bg-black/40 backdrop-blur-sm rounded-full transition-all"
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-3 text-white/70 hover:text-white bg-black/20 hover:bg-black/40 backdrop-blur-sm rounded-full transition-shadow"
         aria-label="Previous slide"
       >
         <FiChevronLeft size={32} />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-3 text-white/70 hover:text-white bg-black/20 hover:bg-black/40 backdrop-blur-sm rounded-full transition-all"
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-3 text-white/70 hover:text-white bg-black/20 hover:bg-black/40 backdrop-blur-sm rounded-full transition-shadow"
         aria-label="Next slide"
       >
         <FiChevronRight size={32} />
@@ -169,7 +169,7 @@ export default function HeroCarousel() {
               setDirection(index > current ? 1 : -1);
               setCurrent(index);
             }}
-            className={`transition-all duration-300 rounded-full ${
+            className={`transition-shadow duration-300 rounded-full ${
               current === index
                 ? "w-8 h-2.5 bg-accent"
                 : "w-2.5 h-2.5 bg-white/50 hover:bg-white/80"
