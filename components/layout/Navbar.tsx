@@ -39,7 +39,7 @@ export default function Navbar() {
               <span className="text-md font-semibold text-primary tracking-wide">
                 NANDANIK
               </span>
-              <span className="text-[10px] text-black text-semibold tracking-[0.2em]">
+              <span className="text-[10px] text-black font-semibold tracking-[0.2em]">
                 BUILDERS LTD
               </span>
             </div>

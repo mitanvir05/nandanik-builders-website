@@ -1,18 +1,32 @@
 import PageTransition from "@/components/ui/PageTransition";
+import HeroCarousel from "@/components/ui/HeroCarousel";
+import EquipmentSelectionGuide from "@/components/sections/EquipmentSelectionGuide";
+import TechnicalCapabilities from "@/components/sections/TechnicalCapabilities";
+import PrecastAdvantages from "@/components/sections/PrecastAdvantages";
+import WhyChooseUs from "@/components/sections/WhyChooseUs";
+import TrustedClients from "@/components/sections/TrustedClients";
 
 export default function Home() {
   return (
     <PageTransition>
-      <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-6">
-        <h1 className="text-4xl md:text-6xl font-bold text-primary">
-          Building the Future,
-          <br />
-          Restoring the Past.
-        </h1>
-        <p className="text-lg text-slate max-w-2xl">
-          Home page content placeholder.
-        </p>
-      </div>
+      {/* Hero Carousel */}
+
+      <HeroCarousel />
+
+      {/* Equipment Selection Matrix Section */}
+      <EquipmentSelectionGuide />
+
+      {/* Technical Capabilities Section */}
+      <TechnicalCapabilities />
+
+      {/* Why Precast Piles Advantages Grid */}
+      <PrecastAdvantages />
+
+      {/* Why Choose Us / Strengths Section */}
+      <WhyChooseUs />
+
+      {/* Infinite Scrolling Client Logos */}
+      <TrustedClients />
     </PageTransition>
   );
 }
