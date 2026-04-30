@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
-import { motion, useInView, animate } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import {
   ComposableMap,
   Geographies,
@@ -17,53 +17,11 @@ interface District {
   long: string;
 }
 
-// --- ANIMATED COUNTER HELPER ---
-function AnimatedCounter({
-  to,
-  duration = 1, // Reduced duration to 1 second for a quick, snappy tick
-}: {
-  to: number;
-  duration?: number;
-}) {
-  const nodeRef = useRef<HTMLSpanElement>(null);
-  const inView = useInView(nodeRef, { once: true, margin: "-100px" });
-
-  // Start exactly 1 number before the target
-  const startValue = to - 1;
-
-  useEffect(() => {
-    if (!inView) return;
-    
-    // PERFORMANCE FIX: Instantiate the formatter ONCE outside the loop
-    const formatter = new Intl.NumberFormat("en-US");
-
-    const controls = animate(startValue, to, {
-      duration,
-      ease: "easeOut",
-      onUpdate(value) {
-        if (nodeRef.current) {
-          // Use the pre-built formatter
-          nodeRef.current.textContent = formatter.format(
-            Math.floor(value),
-          );
-        }
-      },
-    });
-    return () => controls.stop();
-  }, [to, startValue, inView, duration]);
-
-  // Initial render state must also be formatted correctly (e.g. 79,999)
-  return (
-    <span ref={nodeRef}>
-      {new Intl.NumberFormat("en-US").format(startValue)}
-    </span>
-  );
-}
 // --- DATA ---
 const statsData = [
   { value: 48, suffix: " +", label: "Professionals in our team" },
   { value: 10, suffix: " +", label: "Years of Experience" },
-  { value: 102, suffix: " +", label: "Complete Projects" },
+  { value: 102, suffix: " +", label: "Completed Projects" },
   { value: 80000, suffix: " +", label: "Pile Driven" },
 ];
 
@@ -77,7 +35,6 @@ export default function ImpactStatistics() {
   const [tooltip, setTooltip] = useState("");
   const [districtMarkers, setDistrictMarkers] = useState<District[]>([]);
 
-  // Fetch the 64 districts data on component mount
   useEffect(() => {
     fetch(markersUrl)
       .then((res) => res.json())
@@ -89,6 +46,7 @@ export default function ImpactStatistics() {
     <section className="py-24 bg-white border-b border-gray-100 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
           {/* LEFT COLUMN: INTERACTIVE MAP */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -97,9 +55,8 @@ export default function ImpactStatistics() {
             transition={{ duration: 0.8 }}
             className="lg:col-span-5 relative w-full aspect-square md:aspect-auto md:h-[600px] flex items-center justify-center bg-bg rounded-3xl p-4 border border-gray-100"
           >
-            {/* Tooltip Overlay */}
             {tooltip && (
-              <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 bg-primary text-white px-4 py-2 rounded-lg shadow-xl font-medium text-sm whitespace-nowrap pointer-events-none transition-opacity">
+              <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 bg-primary text-white px-4 py-2 rounded-lg shadow-xl font-medium text-sm whitespace-nowrap pointer-events-none">
                 {tooltip}
               </div>
             )}
@@ -107,8 +64,8 @@ export default function ImpactStatistics() {
             <ComposableMap
               projection="geoMercator"
               projectionConfig={{
-                scale: 8800, // Bumped up significantly to fill the box
-                center: [90.3, 23.9], // Micro-adjusted the center so the top/bottom don't cut off
+                scale: 8800,
+                center: [90.3, 23.9],
               }}
               className="w-full h-full"
             >
@@ -124,23 +81,20 @@ export default function ImpactStatistics() {
                           geo.properties.name ||
                           geo.properties.ADM2_EN ||
                           "District";
-                        setTooltip(`${districtName}`);
+                        setTooltip(districtName);
                       }}
-                      onMouseLeave={() => {
-                        setTooltip("");
-                      }}
+                      onMouseLeave={() => setTooltip("")}
                       style={{
                         default: {
-                          fill: "#2B325A", // Brand Navy
+                          fill: "#2B325A",
                           outline: "none",
-                          stroke: "#3B82F6", // Brand Accent Blue
+                          stroke: "#3B82F6",
                           strokeWidth: 0.5,
                         },
                         hover: {
                           fill: "#3B82F6",
                           outline: "none",
                           cursor: "pointer",
-                          transition: "all 250ms",
                         },
                         pressed: {
                           fill: "#1e3a8a",
@@ -152,7 +106,7 @@ export default function ImpactStatistics() {
                 }
               </Geographies>
 
-              {/* ALL 64 DISTRICT MARKERS */}
+              {/* DISTRICT MARKERS */}
               {districtMarkers.map((district) => (
                 <Marker
                   key={district.id}
@@ -160,15 +114,12 @@ export default function ImpactStatistics() {
                     parseFloat(district.long),
                     parseFloat(district.lat),
                   ]}
-                  onMouseEnter={() =>
-                    setTooltip(`${district.name} `)
-                  }
+                  onMouseEnter={() => setTooltip(district.name)}
                   onMouseLeave={() => setTooltip("")}
                 >
-                  {/* Custom Map Pin */}
                   <g
                     fill="none"
-                    stroke="#10b981" // Emerald Green
+                    stroke="#10b981"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -183,7 +134,6 @@ export default function ImpactStatistics() {
                     <circle cx="12" cy="7" r="3" fill="#10b981" />
                   </g>
 
-                  {/* District Name */}
                   <text
                     textAnchor="middle"
                     y={-14}
@@ -192,7 +142,7 @@ export default function ImpactStatistics() {
                       fill: "#10b981",
                       fontSize: "5px",
                       fontWeight: "bold",
-                      pointerEvents: "none", // Ensures text doesn't block hover events on the pin
+                      pointerEvents: "none",
                     }}
                   >
                     {district.name}
@@ -236,7 +186,7 @@ export default function ImpactStatistics() {
                   <div className="relative z-10">
                     <div className="flex items-baseline justify-center mb-2">
                       <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
-                        <AnimatedCounter to={stat.value} />
+                        {new Intl.NumberFormat("en-US").format(stat.value)}
                       </h3>
                       <span className="text-3xl md:text-4xl font-bold text-accent ml-1">
                         {stat.suffix}
@@ -250,6 +200,7 @@ export default function ImpactStatistics() {
               ))}
             </div>
           </div>
+
         </div>
       </div>
     </section>
