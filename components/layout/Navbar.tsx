@@ -27,11 +27,11 @@ export default function Navbar() {
           >
             {/* Logo Image */}
             <Image
-              src="/logo.png"
+              src="/logo.svg"
               alt="Nandanik Builders Ltd"
               width={160}
               height={60}
-              className="h-10 w-auto object-contain"
+              className="h-11 w-auto object-contain"
               priority
             />
 
