@@ -7,12 +7,15 @@ import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import ImpactStatistics from "@/components/sections/ImpactStatistics"; // <-- Add this
 import TrustedClients from "@/components/sections/TrustedClients";
 import EquipmentSpecifications from "@/components/sections/EquipmentSpecifications";
+import CompanyIntro from "@/components/sections/CompanyIntro";
 
 export default function Home() {
   return (
     <PageTransition>
       {/* Hero Carousel */}
       <HeroCarousel />
+      {/* Company Introduction */}
+      <CompanyIntro />
       {/* Detailed Specs Tables */}
       <EquipmentSpecifications />
 

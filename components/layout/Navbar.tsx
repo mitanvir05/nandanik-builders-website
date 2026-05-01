@@ -56,12 +56,12 @@ export default function Navbar() {
 
             {/* Services Dropdown (Desktop Hover) */}
             <div
-              className="relative group h-full py-8"
+              className="relative group h-full py-8 "
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
               <button
-                className={`flex items-center text-sm font-medium transition-colors hover:text-accent ${isServiceActive ? "text-accent" : "text-primary"}`}
+                className={`cursor-pointer flex items-center text-sm font-medium transition-colors hover:text-accent ${isServiceActive ? "text-accent" : "text-primary"}`}
               >
                 Our Services <FiChevronDown className="ml-1 mt-0.5" />
               </button>
@@ -73,13 +73,15 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 w-64 bg-white shadow-lg rounded-md overflow-hidden border border-gray-100"
+                    className="absolute top-full left-0 w-64 bg-white shadow-lg rounded-md overflow-hidden border border-gray-100 "
                   >
                     {services.map((service) => (
                       <Link
                         key={service.slug}
                         href={`/services/${service.slug}`}
-                        className={`block px-4 py-3 text-sm hover:bg-bg hover:text-accent transition-colors ${pathname === `/services/${service.slug}` ? "bg-bg text-accent font-medium" : "text-slate"}`}
+                        className={`block  px-4 py-3 text-sm hover:bg-bg hover:text-accent transition-colors ${pathname === `/services/${service.slug}` ? "bg-bg text-accent font-medium" : "text-slate"}`}
+                       
+                        onClick={() => setServicesOpen(false)}
                       >
                         {service.name}
                       </Link>
