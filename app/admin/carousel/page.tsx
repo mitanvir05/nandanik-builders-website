@@ -199,6 +199,7 @@ export default function CarouselManager() {
                   alt={slide.title}
                   fill
                   className="object-cover"
+                  sizes="96px"
                 />
               </div>
               <div className="flex-1 min-w-0">
@@ -447,6 +448,7 @@ export default function CarouselManager() {
                       alt="Preview"
                       fill
                       className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 500px"
                     />
                     <button
                       type="button"
