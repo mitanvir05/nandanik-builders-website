@@ -99,7 +99,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4 mb-6">
               {/* Embedded Google Map iframe */}
-              <div className="w-full h-32 rounded-lg overflow-hidden border border-gray-700/50 hover:border-accent transition-colors group relative">
+              <div className="w-full h-28 rounded-lg overflow-hidden border border-gray-700/50 hover:border-accent transition-colors group relative">
                 {/* Invisible overlay link so clicking the map opens the app/full site */}
                 <a
                   href="https://maps.app.goo.gl/V9Hi2PkSukn7Som49"
