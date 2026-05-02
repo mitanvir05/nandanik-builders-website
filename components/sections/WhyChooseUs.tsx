@@ -34,7 +34,7 @@ const strengths = [
   {
     title: "Advanced Equipment",
     description:
-      "Utilizing modern Automatic Diesel Hammer (ADH) systems for efficient and precise pile driving operations.",
+      "We use advanced equipment from top manufacturers, enhanced and tailored to local site conditions for better efficiency, reliability and long-term performance.",
     icon: FiSettings,
   },
   {
