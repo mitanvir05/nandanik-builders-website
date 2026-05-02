@@ -178,7 +178,7 @@ export default function CarouselManager() {
                       setSlides(slides.map(s => s._id === slide._id ? { ...s, isFeatured: !s.isFeatured } : s));
                       await toggleFeatured(slide._id, slide.isFeatured);
                     }}
-                    className={`inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                    className={`inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-bold transition-shadow cursor-pointer ${
                       slide.isFeatured ? "bg-blue-50 text-blue-700 border border-blue-200" : "bg-gray-100 text-gray-500 border border-gray-200"
                     }`}
                   >
@@ -233,17 +233,17 @@ export default function CarouselManager() {
 
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Title</label>
-                <input type="text" required placeholder="Slide Title" value={formData.title} onChange={(e) => setFormData({ ...formData, title: e.target.value })} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all text-sm" />
+                <input type="text" required placeholder="Slide Title" value={formData.title} onChange={(e) => setFormData({ ...formData, title: e.target.value })} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-shadow text-sm" />
               </div>
 
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Description</label>
-                <textarea required rows={3} placeholder="Slide description..." value={formData.description} onChange={(e) => setFormData({ ...formData, description: e.target.value })} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all text-sm resize-none" />
+                <textarea required rows={3} placeholder="Slide description..." value={formData.description} onChange={(e) => setFormData({ ...formData, description: e.target.value })} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-shadow text-sm resize-none" />
               </div>
 
               <div className="flex gap-3 pt-2">
                 <button type="button" onClick={() => setIsModalOpen(false)} className="flex-1 py-3 rounded-xl text-sm font-bold text-slate-600 bg-gray-100 hover:bg-gray-200 transition-colors cursor-pointer">Cancel</button>
-                <button type="submit" disabled={isSubmitting || !formData.imageUrl || isUploadingImage} className="flex-[2] py-3 rounded-xl text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md cursor-pointer">{isSubmitting ? "Saving..." : "Save Slide"}</button>
+                <button type="submit" disabled={isSubmitting || !formData.imageUrl || isUploadingImage} className="flex-[2] py-3 rounded-xl text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-shadow shadow-md cursor-pointer">{isSubmitting ? "Saving..." : "Save Slide"}</button>
               </div>
             </form>
           </div>
