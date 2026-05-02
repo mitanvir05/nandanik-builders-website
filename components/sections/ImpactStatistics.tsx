@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import {
   ComposableMap,
   Geographies,
@@ -46,15 +45,8 @@ export default function ImpactStatistics() {
     <section className="py-24 bg-white border-b border-gray-100 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
           {/* LEFT COLUMN: INTERACTIVE MAP */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="lg:col-span-5 relative w-full aspect-square md:aspect-auto md:h-[600px] flex items-center justify-center bg-bg rounded-3xl p-4 border border-gray-100"
-          >
+          <div className="lg:col-span-5 relative w-full aspect-square md:aspect-auto md:h-[600px] flex items-center justify-center bg-bg rounded-3xl p-4 border border-gray-100">
             {tooltip && (
               <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 bg-primary text-white px-4 py-2 rounded-lg shadow-xl font-medium text-sm whitespace-nowrap pointer-events-none">
                 {tooltip}
@@ -150,17 +142,11 @@ export default function ImpactStatistics() {
                 </Marker>
               ))}
             </ComposableMap>
-          </motion.div>
+          </div>
 
           {/* RIGHT COLUMN: STATISTICS */}
           <div className="lg:col-span-7 lg:pl-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-              className="mb-10 text-center lg:text-left"
-            >
+            <div className="mb-10 text-center lg:text-left">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
                 Delivering Excellence at Scale
               </h2>
@@ -169,16 +155,12 @@ export default function ImpactStatistics() {
                 of equipment and experts, we execute the most challenging
                 foundation projects in Bangladesh.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {statsData.map((stat, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="bg-primary p-8 rounded-2xl shadow-lg flex flex-col items-center justify-center text-center border border-white/5 relative overflow-hidden group"
                 >
                   <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -196,11 +178,10 @@ export default function ImpactStatistics() {
                       {stat.label}
                     </p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
-
         </div>
       </div>
     </section>
