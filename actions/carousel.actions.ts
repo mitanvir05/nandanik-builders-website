@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import connectDB from "@/lib/mongodb"; // Assume you have a standard mongoose connect file
+import connectDB from "@/lib/mongodb"; 
 import Slide from "@/models/slide";
 
 export async function getSlides() {
@@ -59,6 +59,24 @@ export async function addSlide(data: { title: string; description: string; image
   });
 
   await newSlide.save();
+  revalidatePath("/admin/carousel");
+  revalidatePath("/");
+}
+
+
+
+
+export async function updateSlide(id: string, data: { title: string; description: string; imageUrl: string; imageId: string }) {
+  await connectDB();
+  
+  await Slide.findByIdAndUpdate(id, {
+    title: data.title,
+    description: data.description,
+    imageUrl: data.imageUrl,
+    imageId: data.imageId,
+  });
+
+  // Refresh both the admin panel and the public homepage to show the edits immediately
   revalidatePath("/admin/carousel");
   revalidatePath("/");
 }
