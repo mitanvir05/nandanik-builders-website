@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import AuthProvider from "@/components/providers/AuthProvider";
+import ConditionalLayout from "@/components/layout/ConditionalLayout"; // <-- Add this import
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -57,9 +56,10 @@ export default function RootLayout({
         className={`${inter.className} bg-bg text-slate antialiased flex flex-col min-h-screen`}
       >
         <AuthProvider>
-        <Navbar />
-        <main className="pt-20">{children}</main>
-        <Footer />
+          {/* Delegate the layout logic to the client component */}
+          <ConditionalLayout>
+            {children}
+          </ConditionalLayout>
         </AuthProvider>
       </body>
     </html>
