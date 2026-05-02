@@ -3,34 +3,32 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import Link from "next/link";
 
 // Using high-quality placeholder images from Unsplash for the corporate look.
 // You should replace these URLs with your actual project/equipment images later.
 const slides = [
   {
     id: 1,
-    title: "Building the Future, Restoring the Past",
+    title: "Precision Pile Casting",
     description:
-      "Leading the industry in precast pile driving, foundation engineering, and heavy construction equipment across Bangladesh.",
+      "High-quality RCC square piles manufactured under controlled conditions to ensure strength, durability and consistent performance.",
     image:
-      "https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop",
+      "/carousel/1.png",
   },
   {
     id: 2,
-    title: "Precision in Every Pile",
+    title: "Silent & Vibration-Free Piling",
     description:
-      "State-of-the-art precast square pile making and comprehensive pile testing services ensuring structural integrity.",
-    image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2071&auto=format&fit=crop",
-  },
+      "Advanced HSPD technology ensures safe, noise-free and efficient pile installation ideal for urban and sensitive project sites.",
+   image:
+      "/carousel/2.jpeg",},
   {
     id: 3,
-    title: "Excellence in Real Estate",
+    title: "High-Impact Driving Power",
     description:
-      "Developing premium residential and commercial properties that redefine modern living and workspaces.",
+      "Robust  (Automatic Diesel Hammer)ADH systems deliver powerful and reliable pile driving performance across diverse and challenging soil conditions.",
     image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
+      "/carousel/3.jpeg",
   },
 ];
 
