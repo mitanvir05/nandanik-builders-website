@@ -4,8 +4,6 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-// Using high-quality placeholder images from Unsplash for the corporate look.
-// You should replace these URLs with your actual project/equipment images later.
 const slides = [
   {
     id: 1,
