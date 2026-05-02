@@ -101,7 +101,7 @@ export default function WhyChooseUs() {
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
               Why Choose <br />
-              <span className="text-accent">Nandanik Builders?</span>
+              <span className="text-accent">The Nandanik Builders Advantage</span>
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed mb-8">
               Nandanik Builders Ltd. is a trusted leader in Bangladesh's precast
