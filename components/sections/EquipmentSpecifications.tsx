@@ -8,6 +8,7 @@ import { FiSettings, FiSliders } from "react-icons/fi";
 
 const hspdData = [
   { model: "HSPD 600 Ton/2020", crane: "25 Ton", dim: "48'-0\"x 28'-0\"", centerLoad: "500 Ton", sideLoad: "300 Ton", sideSpace: "4'-6\"" },
+  { model: "HSPD 618 Ton/2021", crane: "25 Ton", dim: "50'-0\"x 27'-0\"", centerLoad: "450 Ton", sideLoad: "290 Ton", sideSpace: "4'-6\"" },
   { model: "HSPD 550 Ton/2018", crane: "25 Ton", dim: "47'-0\"x 26'-0\"", centerLoad: "400 Ton", sideLoad: "250 Ton", sideSpace: "4'-0\"" },
   { model: "HSPD 500 Ton/2023", crane: "25 Ton", dim: "47'-0\"x 26'-0\"", centerLoad: "400 Ton", sideLoad: "250 Ton", sideSpace: "4'-0\"" },
   { model: "HSPD 500 Ton/2022", crane: "25 Ton", dim: "47'-0\"x 26'-0\"", centerLoad: "400 Ton", sideLoad: "250 Ton", sideSpace: "4'-0\"" },
