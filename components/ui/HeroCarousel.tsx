@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Image from "next/image"; //
+import Image from "next/image"; 
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { getSlides } from "@/actions/carousel.actions";
