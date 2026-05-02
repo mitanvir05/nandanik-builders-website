@@ -12,6 +12,8 @@ import CompanyIntro from "@/components/sections/CompanyIntro";
 export default function Home() {
   return (
     <PageTransition>
+
+      <main className="overflow-x-hidden w-full">
       {/* Hero Carousel */}
       <HeroCarousel />
       {/* Company Introduction */}
@@ -36,6 +38,7 @@ export default function Home() {
 
       {/* Infinite Scrolling Client Logos */}
       <TrustedClients />
+      </main>
     </PageTransition>
   );
 }
