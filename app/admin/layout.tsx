@@ -27,7 +27,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           <div className="flex items-center space-x-3 sm:space-x-6">
             <Link 
               href="/" 
-              className="flex items-center space-x-2 px-3 py-1.5 rounded-md text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition-all text-sm font-semibold cursor-pointer"
+              className="flex items-center space-x-2 px-3 py-1.5 rounded-md text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition-shadow text-sm font-semibold cursor-pointer"
             >
               <FiHome size={16} />
               <span className="hidden xs:block">Go to Home</span>

@@ -52,7 +52,7 @@ export default function EquipmentSpecifications() {
           <div className="inline-flex bg-white p-1.5 rounded-xl shadow-sm border border-gray-100">
             <button
               onClick={() => setActiveTab("hspd")}
-              className={`flex items-center px-6 py-3 rounded-lg text-sm md:text-base font-semibold transition-all duration-300 ${
+              className={`flex items-center px-6 py-3 rounded-lg text-sm md:text-base font-semibold transition-shadow duration-300 ${
                 activeTab === "hspd" 
                   ? "bg-primary text-white shadow-md" 
                   : "text-slate hover:text-primary hover:bg-gray-50"
@@ -63,7 +63,7 @@ export default function EquipmentSpecifications() {
             </button>
             <button
               onClick={() => setActiveTab("adh")}
-              className={`flex items-center px-6 py-3 rounded-lg text-sm md:text-base font-semibold transition-all duration-300 ${
+              className={`flex items-center px-6 py-3 rounded-lg text-sm md:text-base font-semibold transition-shadow duration-300 ${
                 activeTab === "adh" 
                   ? "bg-primary text-white shadow-md" 
                   : "text-slate hover:text-primary hover:bg-gray-50"
