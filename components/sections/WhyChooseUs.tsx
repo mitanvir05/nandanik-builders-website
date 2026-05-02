@@ -110,7 +110,7 @@ export default function WhyChooseUs() {
             </p>
 
             {/* Optional Stat/Highlight Block */}
-            <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-6 hidden md:block">
+            {/* <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-6 hidden md:block">
               <p className="font-semibold text-lg text-white mb-2">
                 Our Core Strength
               </p>
@@ -118,7 +118,7 @@ export default function WhyChooseUs() {
                 Combining the largest HSPD fleet with specialized expertise to
                 tackle Bangladesh's most challenging soil conditions.
               </p>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Right Column: Strengths Grid */}
