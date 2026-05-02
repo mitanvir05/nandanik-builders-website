@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <footer className="bg-primary text-white pt-16 pb-8 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-6">
           {/* Brand & About */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold tracking-tight text-white">
@@ -92,24 +92,52 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info & Map */}
           <div>
             <h4 className="text-lg font-semibold mb-6 border-b border-gray-700 pb-2 inline-block text-white">
               Contact Us
             </h4>
-            <ul className="space-y-4">
+            <ul className="space-y-4 mb-6">
+              {/* Embedded Google Map iframe */}
+              <div className="w-full h-32 rounded-lg overflow-hidden border border-gray-700/50 hover:border-accent transition-colors group relative">
+                {/* Invisible overlay link so clicking the map opens the app/full site */}
+                <a
+                  href="https://maps.app.goo.gl/V9Hi2PkSukn7Som49"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 z-10"
+                  aria-label="Open Map"
+                ></a>
+                <iframe
+                  src="https://maps.google.com/maps?q=Saiham%20Sky%20View%20Tower,%20Dhaka&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="pointer-events-none  opacity-95 group-hover:grayscale-0 group-hover:opacity-100 transition-colors duration-500"
+                ></iframe>
+              </div>
               <li className="flex items-start">
                 <FiMapPin
                   className="text-accent mt-1 mr-3 flex-shrink-0"
                   size={18}
                 />
-                <span className="text-gray-400 text-sm">
+                {/* Made the address a clickable link to your Google Maps URL */}
+                <a
+                  href="https://maps.app.goo.gl/V9Hi2PkSukn7Som49"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-accent transition-colors text-sm"
+                  title="View on Google Maps"
+                >
                   Saiham Sky View Tower (C-10)
                   <br />
                   195, Sayed Nazrul Islam Sarani
                   <br />
                   Bijoynagar, Dhaka-1000
-                </span>
+                </a>
               </li>
               <li className="flex items-center">
                 <FiPhone className="text-accent mr-3 flex-shrink-0" size={18} />
@@ -134,7 +162,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-800 flex flex-col items-center space-y-4 md:space-y-0">
+        <div className="pt-2 border-t border-gray-800 flex flex-col items-center space-y-4 md:space-y-0">
           <p className="text-gray-500 text-sm text-center md:text-left">
             © {currentYear} Nandanik Builders Ltd. All rights reserved.
           </p>
